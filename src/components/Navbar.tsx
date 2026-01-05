@@ -30,52 +30,52 @@ const Navbar: React.FC = () => {
                 Elite Cricket Academy
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="hidden sm:ml-6 sm:flex sm:space-x-10">
               <Link 
                 href="/" 
-                className={`${isActive('/')} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/')} inline-flex items-center px-3 py-2 border-b-2 text-base font-medium`}
               >
                 Home
               </Link>
               <Link 
                 href="/about" 
-                className={`${isActive('/about')} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/about')} inline-flex items-center px-3 py-2 border-b-2 text-base font-medium`}
               >
                 About
               </Link>
               <Link 
                 href="/programs" 
-                className={`${isActive('/programs')} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/programs')} inline-flex items-center px-3 py-2 border-b-2 text-base font-medium`}
               >
                 Programs
               </Link>
               <Link 
                 href="/coaches" 
-                className={`${isActive('/coaches')} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/coaches')} inline-flex items-center px-3 py-2 border-b-2 text-base font-medium`}
               >
                 Coaches
               </Link>
               <Link 
                 href="/contact" 
-                className={`${isActive('/contact')} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/contact')} inline-flex items-center px-3 py-2 border-b-2 text-base font-medium`}
               >
                 Contact
               </Link>
               <Link 
                 href="/facilities" 
-                className={`${isActive('/facilities')} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/facilities')} inline-flex items-center px-3 py-2 border-b-2 text-base font-medium`}
               >
                 Facilities
               </Link>
               <Link 
                 href="/achievements" 
-                className={`${isActive('/achievements')} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/achievements')} inline-flex items-center px-3 py-2 border-b-2 text-base font-medium`}
               >
                 Achievements
               </Link>
             </div>
           </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
+          <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-6">
             <Link
               href="/login"
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
