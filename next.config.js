@@ -9,14 +9,12 @@ const nextConfig = {
       },
     ],
   },
-  // Development server configuration
-  devIndicators: {
-    buildActivity: true,
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
   },
-  // Use port 3001 by default
-  devServer: {
-    port: 3001,
-  },
+  // Note: The 'server' option should be configured in package.json scripts instead
 };
 
 // Set the port for the development server

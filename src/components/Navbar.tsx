@@ -67,6 +67,12 @@ const Navbar: React.FC = () => {
               >
                 Facilities
               </Link>
+              <Link 
+                href="/achievements" 
+                className={`${isActive('/achievements')} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+              >
+                Achievements
+              </Link>
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
@@ -142,9 +148,15 @@ const Navbar: React.FC = () => {
             </Link>
             <Link
               href="/facilities"
-              className={`${pathname === '/facilities' ? 'bg-yellow-50 border-yellow-500 text-yellow-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700'} block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
+              className={`${isActive('/facilities')} border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
             >
               Facilities
+            </Link>
+            <Link
+              href="/achievements"
+              className={`${isActive('/achievements')} border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
+            >
+              Achievements
             </Link>
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="mt-3 space-y-1">

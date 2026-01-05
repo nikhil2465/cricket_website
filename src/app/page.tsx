@@ -1,229 +1,271 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 
-export default function Home() {
-  const features = [
-    {
-      name: 'Expert Coaches',
-      description: 'Learn from experienced and certified cricket coaches with professional playing backgrounds.',
-      icon: (
-        <svg className="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
-    },
-    {
-      name: 'Modern Facilities',
-      description: 'Train in state-of-the-art facilities with professional-grade cricket equipment and pitches.',
-      icon: (
-        <svg className="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      ),
-    },
-    {
-      name: 'Personalized Training',
-      description: 'Customized training programs tailored to individual skill levels and goals.',
-      icon: (
-        <svg className="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-        </svg>
-      ),
-    },
-    {
-      name: 'Tournament Play',
-      description: 'Opportunities to compete in local and national tournaments.',
-      icon: (
-        <svg className="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
-    },
-  ];
-
-  const programs = [
-    {
-      name: 'Junior Academy',
-      description: 'For ages 6-16, focusing on fundamentals and love for the game.',
-      price: '₹2,500/month',
-      features: ['Basic skills training', 'Physical conditioning', '2 sessions per week'],
-      cta: 'Learn More',
-      href: '/programs/junior',
-    },
-    {
-      name: 'Advanced Training',
-      description: 'For serious players looking to take their game to the next level.',
-      price: '₹4,000/month',
-      features: ['Advanced techniques', 'Match simulation', '4 sessions per week', 'Video analysis'],
-      cta: 'Learn More',
-      href: '/programs/advanced',
-      featured: true,
-    },
-    {
-      name: 'One-on-One Coaching',
-      description: 'Personalized coaching sessions tailored to your specific needs.',
-      price: '₹1,500/session',
-      features: ['Custom training plan', 'Flexible scheduling', 'Focused attention'],
-      cta: 'Book Now',
-      href: '/programs/coaching',
-    },
-  ];
-
-  return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-gray-900 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative z-10 pb-8 bg-gray-900 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-              <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                  <span className="block">Build Your</span>
-                  <span className="block text-yellow-400">Cricket Career</span>
-                </h1>
-                <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Join Elite Cricket Academy and train with the best coaches using world-class facilities. Develop your skills, discipline, and sportsmanship.
-                </p>
-                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div className="rounded-md shadow">
-                    <Link
-                      href="/register"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-700 bg-yellow-400 hover:bg-yellow-500 md:py-4 md:text-lg md:px-10 transition-colors duration-200"
-                    >
-                      Join Now
-                    </Link>
-                  </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <Link
-                      href="/programs"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-200 bg-yellow-900 bg-opacity-60 hover:bg-opacity-70 md:py-4 md:text-lg md:px-10 transition-colors duration-200"
-                    >
-                      Our Programs
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </main>
-          </div>
-        </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <div className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent opacity-90 lg:hidden"></div>
-            <div className="h-full w-full bg-gray-800 flex items-center justify-center">
-              <span className="text-gray-400 text-lg">Cricket Academy Hero Image</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <div className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base text-yellow-500 font-semibold tracking-wide uppercase">Why Choose Us</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              The Complete Cricket Experience
-            </p>
-            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              We provide comprehensive training programs for cricketers of all ages and skill levels.
-            </p>
-          </div>
-
-          <div className="mt-10">
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              {features.map((feature) => (
-                <div key={feature.name} className="pt-6">
-                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8 h-full">
-                    <div className="-mt-6">
-                      <div>
-                        <span className="inline-flex items-center justify-center p-3 bg-yellow-500 rounded-md shadow-lg">
-                          {feature.icon}
-                        </span>
-                      </div>
-                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">{feature.name}</h3>
-                      <p className="mt-5 text-base text-gray-500">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Programs Section */}
-      <div className="bg-gray-50 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center mb-12">
-            <h2 className="text-base text-yellow-500 font-semibold tracking-wide uppercase">Our Programs</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Training for Every Level
-            </p>
-          </div>
-
-          <div className="mt-10">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {programs.map((program) => (
-                <div 
-                  key={program.name} 
-                  className={`relative bg-white pt-5 px-6 pb-8 shadow-xl rounded-lg overflow-hidden ${
-                    program.featured ? 'ring-2 ring-yellow-500 transform scale-105 z-10' : ''
-                  }`}
-                >
-                  {program.featured && (
-                    <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold px-3 py-1 transform translate-x-2 -translate-y-2">
-                      POPULAR
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold text-gray-900">{program.name}</h3>
-                  <p className="mt-2 text-gray-600">{program.description}</p>
-                  <p className="mt-4">
-                    <span className="text-3xl font-extrabold text-gray-900">{program.price}</span>
-                  </p>
-                  <ul className="mt-6 space-y-2">
-                    {program.features.map((feature, index) => (
-                      <li key={index} className="flex items-center">
-                        <svg className="h-5 w-5 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-8">
-                    <Link
-                      href={program.href}
-                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200"
-                    >
-                      {program.cta}
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-yellow-500">
-        <div className="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            <span className="block">Ready to start your cricket journey?</span>
-          </h2>
-          <p className="mt-4 text-lg leading-6 text-yellow-100">
-            Join us today and take the first step towards becoming a better cricketer.
-          </p>
-          <Link
-            href="/register"
-            className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-yellow-600 bg-white hover:bg-gray-50 sm:w-auto transition-colors duration-200"
+// Hero Banner Component with Enhanced Styling
+const HeroBanner = () => (
+  <div className="relative h-screen w-full overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800 flex items-center justify-center">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-15"></div>
+      <div className="text-center text-white px-6 py-12 sm:py-20 max-w-5xl mx-auto relative z-10">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-serif tracking-tight leading-tight">
+          <span className="block text-yellow-400 mb-2">Elite Cricket</span>
+          <span className="block text-white">Academy</span>
+        </h1>
+        <p className="text-xl md:text-2xl mb-12 font-light max-w-2xl mx-auto leading-relaxed">
+          Your journey to cricket excellence begins with professional coaching, world-class facilities, and a passion for the game.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <Link 
+            href="/register" 
+            className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto text-center"
           >
-            Enroll Now
+            Start Your Journey
+          </Link>
+          <Link 
+            href="/programs" 
+            className="bg-transparent border-2 border-white hover:bg-white hover:bg-opacity-10 text-white px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 w-full sm:w-auto text-center"
+          >
+            Explore Programs
           </Link>
         </div>
       </div>
+    </div>
+  </div>
+);
+
+// Feature Card Component
+const FeatureCard = ({ title, description, icon }: { title: string; description: string; icon: string }) => (
+  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col transform hover:-translate-y-2 border border-gray-100">
+    <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-6 text-blue-600">
+      {icon}
+    </div>
+    <h3 className="text-2xl font-bold mb-4 text-gray-900 font-serif">{title}</h3>
+    <p className="text-gray-600 text-base leading-relaxed mb-6">{description}</p>
+    <div className="mt-auto">
+      <button className="text-blue-600 hover:text-blue-800 font-medium text-base flex items-center transition-colors duration-200 group">
+        Learn more
+        <svg className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </button>
+    </div>
+  </div>
+);
+
+// Highlights Component with Enhanced Design
+const Highlights = () => {
+  const features = [
+    { 
+      title: 'Expert Coaching', 
+      description: 'Learn from BCCI and ICC certified coaches with years of professional playing and coaching experience.',
+      icon: '🏆'
+    },
+    { 
+      title: 'World-Class Facilities', 
+      description: 'Train on professional turf wickets with modern training equipment and video analysis technology.',
+      icon: '⚾'
+    },
+    { 
+      title: 'Personalized Training', 
+      description: 'Customized training programs tailored to individual skill levels and goals for all age groups.',
+      icon: '🎯'
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-gradient-to-b from-blue-50 to-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-20 max-w-4xl mx-auto">
+          <span className="inline-block px-5 py-2.5 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold tracking-wider uppercase mb-6">
+            Why Choose Us
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 font-serif leading-tight mb-6">
+            Excellence in <span className="text-blue-700">Cricket Training</span>
+          </h2>
+          <div className="w-32 h-1.5 bg-yellow-400 mx-auto rounded-full mb-12"></div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {features.map((feature, index) => (
+            <div key={index} className="group">
+              <FeatureCard 
+                title={feature.title}
+                description={feature.description}
+                icon={feature.icon}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Testimonial Component
+const Testimonial = () => (
+  <div className="bg-blue-900 text-white py-20">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="text-6xl mb-6">"</div>
+      <blockquote className="text-xl md:text-2xl font-light leading-relaxed mb-8">
+        The coaching at Elite Cricket Academy transformed my game completely. The personalized attention and professional facilities are unmatched.
+      </blockquote>
+      <div className="font-medium">
+        <p className="text-yellow-300">Rahul Sharma</p>
+        <p className="text-blue-200 text-sm">Under-19 State Team Player</p>
+      </div>
+    </div>
+  </div>
+);
+
+// Main Page Component
+export default function Home() {
+  return (
+    <div className="font-sans antialiased text-gray-800">
+      <Head>
+        <title>Elite Cricket Academy | Professional Cricket Training</title>
+        <meta name="description" content="Professional cricket coaching for all ages and skill levels. Join our academy to train with certified coaches and elevate your game." />
+      </Head>
+      
+      <HeroBanner />
+      <Highlights />
+      
+      {/* Programs Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <span className="inline-block px-5 py-2.5 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold tracking-wider uppercase mb-6">
+              Our Programs
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 font-serif leading-tight mb-6">
+              Training for <span className="text-blue-700">Every Player</span>
+            </h2>
+            <div className="w-32 h-1.5 bg-yellow-400 mx-auto rounded-full mb-12"></div>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Comprehensive training programs designed to nurture talent at every level, from beginners to professional athletes.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+            {[
+              {
+                title: 'Junior Program',
+                age: 'Ages 8-14',
+                description: 'Foundational skills development with focus on technique and fun.',
+                features: ['Basic skills', 'Fitness training', 'Match simulations'],
+                price: '₹3,500/month'
+              },
+              {
+                title: 'Development Program',
+                age: 'Ages 15-19',
+                description: 'Advanced training for competitive players looking to excel.',
+                features: ['Advanced techniques', 'Match strategy', 'Strength & conditioning'],
+                price: '₹5,500/month',
+                featured: true
+              },
+              {
+                title: 'Elite Program',
+                age: 'Ages 20+',
+                description: 'Professional training for serious players and emerging talents.',
+                features: ['High-performance coaching', 'Video analysis', 'Tournament preparation'],
+                price: '₹8,500/month'
+              }
+            ].map((program, index) => (
+              <div 
+                key={index} 
+                className={`h-full flex flex-col rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl ${
+                  program.featured 
+                    ? 'transform -translate-y-4 border-2 border-yellow-400' 
+                    : 'border border-gray-200 hover:border-blue-200'
+                }`}
+              >
+                {program.featured && (
+                  <div className="bg-yellow-400 text-center py-2 text-sm font-semibold text-gray-900 tracking-wider">
+                    MOST POPULAR
+                  </div>
+                )}
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 font-serif">{program.title}</h3>
+                    <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-6">
+                      {program.age}
+                    </span>
+                    <p className="text-gray-600 mb-6 text-base leading-relaxed">{program.description}</p>
+                    <div className="text-4xl font-bold text-gray-900 mb-2 font-serif">{program.price}</div>
+                    <p className="text-sm text-gray-500 mb-6">per month</p>
+                    <ul className="space-y-4 mb-10 text-left">
+                      {program.features.map((feature, i) => (
+                        <li key={i} className="flex items-center">
+                          <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <button className={`w-full py-4 px-6 rounded-xl font-medium text-lg transition-all duration-300 ${
+                    program.featured 
+                      ? 'bg-yellow-500 hover:bg-yellow-600 text-white transform hover:scale-105' 
+                      : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  }`}>
+                    Enroll Now
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <p className="text-gray-600 mb-8">
+              Not sure which program is right for you? Our coaches will help you choose the best path.
+            </p>
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10 transition-colors duration-300"
+            >
+              Contact Us for Guidance
+              <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      <Testimonial />
+      
+      {/* CTA Section */}
+      <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-24">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif leading-tight">
+            Ready to Elevate Your <span className="text-yellow-400">Cricket Journey</span>?
+          </h2>
+          <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Join our academy today and take the first step towards cricket excellence with our expert coaching team.
+            Transform your passion into performance with personalized training programs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link 
+              href="/register" 
+              className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center"
+            >
+              Start Your Journey
+              <svg className="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+            <Link 
+              href="/programs" 
+              className="bg-transparent border-2 border-white hover:bg-white hover:bg-opacity-10 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 inline-flex items-center justify-center"
+            >
+              Explore Programs
+              <svg className="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
