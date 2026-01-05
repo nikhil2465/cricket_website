@@ -1,15 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable server-side rendering of API routes
+  // Enable static export
   output: 'export',
   
-  // Disable API routes in static export
+  // Configure images for static export
   images: {
     unoptimized: true,
     domains: ['images.unsplash.com'],
   },
   
-  // Disable server-side rendering for specific pages
+  // Define static pages for export
   exportPathMap: async function() {
     return {
       '/': { page: '/' },
@@ -20,7 +20,7 @@ const nextConfig = {
     };
   },
   
-  // Disable API routes during build
+  // Configure webpack to exclude server-side modules
   webpack: (config, { isServer }) => {
     if (!isServer) {
       // Exclude server-side only modules
@@ -46,11 +46,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   
-  // Add any other necessary configurations
+  // Enable React Strict Mode
   reactStrictMode: true,
 };
-  // Note: The 'server' option should be configured in package.json scripts instead
-};
+
+module.exports = nextConfig;
 
 // Set the port for the development server
 const PORT = process.env.PORT || 3001;
